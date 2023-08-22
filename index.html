@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Map</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div id="mapContainer"></div>
+        <div class="bst-sidebar flex-column left-div">
+            <div class="bst-filter">
+                <form action="" id="input_search" class="flex-column">
+                    <header>
+                        <h1>فنادق</h1>
+                        <h2>ابحث عن الفندق المناسب لك</h2>
+                    </header>
+                    <input type="text" id="search" placeholder="ادخل اسم الدولة" />
+                    <ul id="auto_suggest_list"></ul>
+                    <input type="text" id="languages_input" placeholder="اختر الدولة">
+                    <ul id="languages_list"></ul>
+                    <button type="submit" id="submit" class="lis-primary-btn">بحث</button>
+                </form>
+            </div>
+        </div>
+
+    <script src="./script.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPZecvorp5_cvDRl0AYm726UT2QWn2dkY&callback=initMap">
+</script>
+</body>
+</html>
