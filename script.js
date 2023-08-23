@@ -33,8 +33,11 @@ const options = {
 try {
 	const response = await fetch(url, options);
 	const result = await response.json();
-	console.log(result.sr[9].coordinates);
 
+    result.sr.map((hotel)=>{
+        console.log(hotel.coordinates);
+
+    })
     new google.maps.Marker({
         position:{lat: 29.404968, lng: -96.236908},
         label:'1',
@@ -100,3 +103,13 @@ try {
 })()
 
 
+const search = document.querySelector('#search')
+search.addEventListener('input',async function(e){
+    // console.log(e.target.value)
+
+    const countries =await fetchCountries()
+
+    const selectedCountry = countries.filter(country=> country.name.toLowerCase().startsWith(e.target.value));
+    console.log(selectedCountry)
+
+})
